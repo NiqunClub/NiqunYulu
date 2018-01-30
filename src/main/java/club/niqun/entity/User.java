@@ -19,70 +19,70 @@ public class User extends AVUser{
 	private Date createdAt;
 	private Date updatedAt;
 	public String getObjectId() {
-		return objectId;
+		return getString("objectId");
 	}
 	public void setObjectId(String objectId) {
-		this.objectId = objectId;
+		put("objectId", objectId);
 	}
 	public String getRole() {
-		return role;
+		return getString("role");
 	}
 	public void setRole(String role) {
-		this.role = role;
+		put("role", role);
 	}
-	public String getPassword() {
-		return password;
-	}
+	/*public String getPassword() {
+		return getString("password");
+	}*/
 	public void setPassword(String password) {
-		this.password = password;
+		put("password", password);
 	}
 	public String getUsername() {
-		return username;
+		return getString("username");
 	}
 	public void setUsername(String username) {
-		this.username = username;
+		put("username", username);
 	}
 	public String getBio() {
-		return bio;
+		return getString("bio");
 	}
 	public void setBio(String bio) {
-		this.bio = bio;
+		put("bio", bio);
 	}
 	public String getMobilePhoneNumber() {
-		return mobilePhoneNumber;
+		return getString("mobilePhoneNumber");
 	}
 	public void setMobilePhoneNumber(String mobilePhoneNumber) {
-		this.mobilePhoneNumber = mobilePhoneNumber;
+		put("mobilePhoneNumber", mobilePhoneNumber);
 	}
 	public String getLocation() {
-		return location;
+		return getString("location");
 	}
 	public void setLocation(String location) {
-		this.location = location;
+		put("location", location);
 	}
 	public String getAvatarUrl() {
-		return avatarUrl;
+		return getString("avatarUrl");
 	}
 	public void setAvatarUrl(String avatarUrl) {
-		this.avatarUrl = avatarUrl;
+		put("avatarUrl", avatarUrl);
 	}
 	public String getDisplayname() {
-		return displayname;
+		return getString("displayname");
 	}
 	public void setDisplayname(String displayname) {
-		this.displayname = displayname;
+		put("displayname", displayname);
 	}
 	public Date getCreatedAt() {
-		return createdAt;
+		return getDate("createdAt");
 	}
 	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+		put("createdAt", createdAt);
 	}
 	public Date getUpdatedAt() {
-		return updatedAt;
+		return getDate("updatedAt");
 	}
 	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
+		put("updatedAt", updatedAt);
 	}
 	
 }

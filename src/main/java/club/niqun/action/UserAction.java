@@ -10,8 +10,10 @@ public class UserAction implements Action {
 	private String username;
 	private String password;
 	private String displayname;
+	private String email;
 	private String bio;
 	private String role;
+	private AVUser user;
 
 	public String getUsername() {
 		return username;
@@ -37,6 +39,14 @@ public class UserAction implements Action {
 		this.displayname = displayname;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getBio() {
 		return bio;
 	}
@@ -53,11 +63,19 @@ public class UserAction implements Action {
 		this.role = role;
 	}
 
+	public AVUser getUser() {
+		return user;
+	}
+
+	public void setUser(AVUser user) {
+		this.user = user;
+	}
+
 	public String login() {
 		AVOSCloud.initialize("brhVd6WgEIjY3Cevgx1SsAOX-gzGzoHsz", "g6yvxgzJ7UICIjRIKEpreVti", "iuTi5rbvejLyQLGTgGtjbyKj");
 		AVOSCloud.setDebugLogEnabled(true);
 		try {
-			AVUser avUser = AVUser.logIn(username, password);
+			user = AVUser.logIn(username, password);
 		} catch (AVException e) {
 			e.printStackTrace();
 			System.out.println(e.getCode());
@@ -69,16 +87,16 @@ public class UserAction implements Action {
 	public String register() {
 		AVOSCloud.initialize("brhVd6WgEIjY3Cevgx1SsAOX-gzGzoHsz", "g6yvxgzJ7UICIjRIKEpreVti", "iuTi5rbvejLyQLGTgGtjbyKj");
 		AVOSCloud.setDebugLogEnabled(true);
-		AVObject testObject = new AVUser();
-		testObject.put("username", username);
-		testObject.put("password", password);
-		testObject.put("displayname", displayname);
-		/*testObject.put("role", "master");
-		testObject.put("bio", "传说中的管理员。。。弱者是否能挥动强者之剑？！");*/
+		AVUser user = new AVUser();
+		user.put("username", username);
+		user.put("password", password);
+		user.put("displayname", displayname);
+		user.put("email", email);
+		/*user.put("role", "master");
+		user.put("bio", "传说中的管理员。。。弱者是否能挥动强者之剑？！");*/
 		try {
-			testObject.save();
+			user.save();
 		} catch (AVException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println(e.getCode());
 			return ERROR;

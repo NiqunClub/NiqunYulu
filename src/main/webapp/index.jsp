@@ -34,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <input type="text" name="username" placeholder="请输入用户名">
 	    <input type="password" name="password" placeholder="请输入密码">
 	    <input type="text" name="displayname" placeholder="请输入昵称">
+	    <input type="email" name="email" placeholder="请输入邮箱，用于重置密码">
 	    <input type="reset" value="重置">
 	    <input type="submit" value="注册">
     </form>
